@@ -1,0 +1,35 @@
+{
+"code": "golemhead",
+"class": "ItemGolemHead",
+"maxstacksize": 1,
+"shape": {
+"base": "game:block/basic/cube"
+},
+"textures": {
+"all": { "base": "runicgems:block/runeglass_active" }
+},
+"guiTransform": {
+"translation": { "x": 0, "y": 2, "z": 0 },
+"rotation": { "x": -22, "y": 135, "z": 180 },
+"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+"scale": 1.45
+},
+"tpHandTransform": {
+"translation": { "x": -0.65, "y": -0.45, "z": -0.55 },
+"rotation": { "x": 180, "y": 90, "z": 0 },
+"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+"scale": 0.65
+},
+"fpHandTransform": {
+"translation": { "x": 0.15, "y": -0.15, "z": 0.2 },
+"rotation": { "x": 0, "y": -135, "z": 0 },
+"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+"scale": 1.15
+},
+"groundTransform": {
+"translation": { "x": 0, "y": 0, "z": 0 },
+"rotation": { "x": 0, "y": 0, "z": 0 },
+"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+"scale": 2.2
+}
+}

@@ -1,0 +1,12 @@
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.csproj.AssemblyReference.cache
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.AssemblyInfoInputs.cache
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.AssemblyInfo.cs
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.csproj.CoreCompileInputs.cache
+C:\Users\Usol\Desktop\RunicGems_Mods\runicgems\RunicGems.deps.json
+C:\Users\Usol\Desktop\RunicGems_Mods\runicgems\RunicGems.dll
+C:\Users\Usol\Desktop\RunicGems_Mods\runicgems\RunicGems.pdb
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.dll
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\refint\RunicGems.dll
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.pdb
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\ref\RunicGems.dll

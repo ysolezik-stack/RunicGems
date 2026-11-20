@@ -1,0 +1,45 @@
+{
+"code": "runeactivator",
+"class": "ItemRuneActivator",
+"tags": ["tool", "tool-chisel"],
+"tool": "Chisel",
+"durability": 32,
+"maxstacksize": 1,
+"attributes": {
+"heldItemPitchFollow": 1,
+"alwaysPlayHeldReady": true
+},
+"creativeinventory": {
+"general": [""],
+"items": [""],
+"runicgems": ["*"]
+},
+"shape": {
+"base": "game:item/tool/chisel"
+},
+"textures": {
+"metal": { "base": "runicgems:block/runeglass_active" },
+"wood": { "base": "game:block/wood/debarked/ebony" }
+},
+"heldRightReadyAnimation": "chiselready",
+"heldTpHitAnimation": "chiselhit",
+"heldTpUseAnimation": "chiselhit",
+"guiTransform": {
+"translation": { "x": 0, "y": 0, "z": 0 },
+"rotation": { "x": 9, "y": 137, "z": -53 },
+"origin": { "x": 0.44, "y": 0, "z": 0.38 },
+"scale": 2.92
+},
+"groundTransform": {
+"translation": { "x": 0, "y": 0, "z": 0 },
+"rotation": { "x": 0, "y": 0, "z": 0 },
+"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+"scale": 4.31
+},
+"tpHandTransform": {
+"translation": { "x": -0.5599, "y": 0.04, "z": -0.65 },
+"rotation": { "x": -3, y: 0, "z": -170 },
+"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+"scale": 0.76
+}
+}

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Runic Gems  Атлас рун и руководство</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; background: #0f1419; color: #e2e8f0; max-width: 1050px; margin: 0 auto; padding: 28px; line-height: 1.5; }
+  h1 { color: #38bdf8; border-bottom: 2px solid #0284c7; padding-bottom: 10px; margin-bottom: 6px; }
+  .sub { color: #94a3b8; margin-bottom: 24px; }
+  h2 { color: #7dd3fc; border-left: 4px solid #0284c7; padding-left: 12px; margin-top: 32px; }
+  .rules { background: #16202a; border: 1px solid #1e3a5f; border-radius: 10px; padding: 16px 20px; }
+  .rules li { margin-bottom: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(470px, 1fr)); gap: 14px; margin-top: 14px; }
+  .card { background: #16202a; border: 1px solid #263545; border-radius: 10px; padding: 14px; display: flex; gap: 16px; align-items: flex-start; }
+  .card-title { font-size: 16px; font-weight: bold; color: #38bdf8; margin-bottom: 4px; }
+  .tag { display: inline-block; font-size: 11px; background: #0c4a6e; color: #bae6fd; padding: 2px 7px; border-radius: 4px; margin-left: 6px; }
+  .desc { font-size: 13px; color: #cbd5e1; margin: 4px 0; }
+  .desc b { color: #f8fafc; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; background: #16202a; border-radius: 10px; overflow: hidden; }
+  th { background: #0c4a6e; color: #e0f2fe; text-align: left; padding: 10px 12px; font-size: 13px; }
+  td { border-top: 1px solid #263545; padding: 10px 12px; font-size: 13px; vertical-align: top; }
+  tr:nth-child(even) td { background: #1b2733; }
+</style>
+</head>
+<body>
+<h1>RUNIC GEMS  Атлас рун и руководство</h1>
+<div class="sub">Справочник по чизл-рунам 44, рунным чашам, реле и чизл-големам (нажмите Ctrl+P для сохранения в PDF)</div>
+
+<h2>1. Основные правила вырезания рун</h2>
+<div class="rules">
+  <ul>
+    <li><b>Материал:</b> руны вырезаются стамеской из <b>Рунного стекла</b> (<code>runeglass</code>) внутри любого блока-носителя.</li>
+    <li><b>Сетка 44 и отступ:</b> каждая руна занимает <b>44 вокселя</b> в одной плоскости и <b>обязательно</b> должна быть окружена рамкой хотя бы в <b>1 пустой воксель</b> со всех сторон (тёмная рамка на схемах ниже).</li>
+    <li><b>Ориентация:</b> поворот и зеркальное отражение не влияют  сканер распознаёт руну в любом положении.</li>
+    <li><b>Рунный столб и радиус:</b> чаша сканирует до <b>3 блоков вниз</b>. Каждый блок с рунным стеклом даёт <b>+2.0 м</b> к радиусу (база 6.0 м).</li>
+    <li><b>Чизл-големы:</b> руны в <b>1-м кадре</b> работают постоянно; руны в <b>4-м кадре</b> включаются только в момент удара, выстрела или работы.</li>
+  </ul>
+</div>
+
+<h2>2. Визуальный атлас всех рун</h2>
+<div class="grid" id="atlas"></div>
+
+<h2>3. Лучшие комбинации и синергии</h2>
+<table>
+  <thead>
+    <tr><th>Связка рун</th><th>Где применять</th><th>Совместный эффект</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><b>Frost + Room</b></td><td>Погреб / кладовая</td><td><b>Вечный рунный ледник:</b> сбрасывает накопленную порчу продуктов во всех сундуках и сосудах внутри замкнутого помещения.</td></tr>
+    <tr><td><b>Mist + Room</b></td><td>Теплица / огород</td><td><b>Авто-орошение:</b> при наличии воды рядом со столбом поддерживает влажность всех грядок в помещении на 90% и выпускает мягкий туман.</td></tr>
+    <tr><td><b>Seal + Anchor + Siphon</b></td><td>Центр базы</td><td><b>Темпоральный бастион:</b> закрывает разломы, восстанавливает стабильность игрока и сам подкачивает масло из соседней бочки.</td></tr>
+    <tr><td><b>Light + Bolt + Night</b></td><td>Периметр / охрана</td><td><b>Ночной страж:</b> работает только ночью (экономя масло днём), освещает территорию и бьёт молниями всех врагов.</td></tr>
+    <tr><td><b>Mist + Swift</b></td><td>Голем (Маршрут)</td><td><b>Полевой поливальщик:</b> голем набирает влагу у водоёма и быстро поливает все грядки вдоль маршрута.</td></tr>
+    <tr><td><b>Bolt (кадр 4) + Swift (кадр 1)</b></td><td>Голем (Охрана)</td><td><b>Боевой защитник:</b> быстро сближается с врагом и тратит заряд молнии только в момент удара.</td></tr>
+  </tbody>
+</table>
+
+<script>
+const runes = new Array(
+  { name: "Anchor (Якорь)", tag: "Стабильность", grid: "0110111111110110", bowl: "Восстанавливает темпоральную стабильность игроков в зоне.", golem: "Восстанавливает стабильность игроков в радиусе 6 м." },
+  { name: "Light (Свет)", tag: "Освещение", grid: "1001011001101001", bowl: "Чаша ярко освещает зону вокруг (сила света до 22).", golem: "Голем светится как переносная рунная лампа (+1 мл/сек)." },
+  { name: "Swift (Ускорение)", tag: "Скорость", grid: "1001111110010110", bowl: "Повышает скорость бега игроков в зоне (+15%..+65%).", golem: "Увеличивает скорость передвижения голема в 1.5 раза." },
+  { name: "Bolt (Молния)", tag: "Атака", grid: "0110010000100110", bowl: "Бьёт молниями врагов в зоне действия.", golem: "Поражает врагов электрическим разрядом (в 4-м кадре  только в бою)." },
+  { name: "Siphon (Подпитка)", tag: "Авто-заправка", grid: "0110011011111001", bowl: "Вытягивает темпоральное масло из бочек и вёдер рядом.", golem: "Сам заправляется маслом из соседних сундуков." },
+  { name: "Mist (Туман)", tag: "Орошение", grid: "1100011000111001", bowl: "Если рядом вода  увлажняет грядки в зоне и создаёт туман.", golem: "Набирает влагу у воды и поливает грядки на маршруте." },
+  { name: "Seal (Печать разломов)", tag: "Защита", grid: "0110110110110110", bowl: "Закрывает темпоральные разломы в зоне лучами энергии.", golem: "Стягивает и закрывает разломы в радиусе 7 м." },
+  { name: "Heat (Нагрев)", tag: "Климат +", grid: "0110111100100000", bowl: "Согревает игроков зимой и растапливает снег и лёд.", golem: "Согревает игроков рядом с собой (защита от холода)." },
+  { name: "Frost (Охлаждение)", tag: "Климат ", grid: "1110011000100010", bowl: "Охлаждает в жару; с руной Room останавливает порчу еды.", golem: "Охлаждает игроков рядом с собой." },
+  { name: "Room (Помещение)", tag: "Модификатор зоны", grid: "1111100110010110", bowl: "Переключает зону со сферы на весь объём закрытой комнаты.", golem: "Не используется на големах." },
+  { name: "Beam (Луч)", tag: "Модификатор зоны", grid: "1100011101111100", bowl: "Направляет эффект узким лучом (2.2 дальности) в сторону грани.", golem: "Не используется на големах." },
+  { name: "Day (День)", tag: "Условие времени", grid: "1111100110011111", bowl: "Чаша работает только днём (06:0018:00), экономя масло ночью.", golem: "Не используется на големах." },
+  { name: "Night (Ночь)", tag: "Условие времени", grid: "0000011001100000", bowl: "Чаша работает только ночью (18:0006:00).", golem: "Не используется на големах." },
+  { name: "Start (Начало)", tag: "Системная", grid: "1100100010001100", bowl: "Маркер начала рунной цепочки (End  зеркально).", golem: "Не используется на големах." },
+  { name: "End (Конец)", tag: "Системная", grid: "0011000100010011", bowl: "Маркер конца рунной цепочки.", golem: "Не используется на големах." }
+);
+
+function makeSvg(grid) {
+  let rects = "";
+  for (let r = 0; r < 6; r++) {
+    for (let c = 0; c < 6; c++) {
+      const x = 4 + c * 14, y = 4 + r * 14;
+      const isMargin = (r === 0 || r === 5 || c === 0 || c === 5);
+      if (isMargin) {
+        rects += `<rect x="${x}" y="${y}" width="12" height="12" rx="2" fill="#0b1117" stroke="#1e293b" stroke-width="1"/>`;
+      } else {
+        const idx = (r - 1) * 4 + (c - 1);
+        const on = grid.charAt(idx) === "1";
+        rects += `<rect x="${x}" y="${y}" width="12" height="12" rx="2" fill="${on ? '#22d3ee' : '#1e293b'}" stroke="${on ? '#a5f3fc' : '#334155'}" stroke-width="1"/>`;
+      }
+    }
+  }
+  return `<svg width="92" height="92" viewBox="0 0 92 92" style="flex-shrink:0">${rects}</svg>`;
+}
+
+const container = document.getElementById("atlas");
+runes.forEach(r => {
+  container.innerHTML += `
+    <div class="card">
+      ${makeSvg(r.grid)}
+      <div>
+        <div class="card-title">${r.name}<span class="tag">${r.tag}</span></div>
+        <div class="desc"><b>Чаша:</b> ${r.bowl}</div>
+        <div class="desc"><b>Голем:</b> ${r.golem}</div>
+      </div>
+    </div>`;
+});
+</script>
+</body>
+</html>

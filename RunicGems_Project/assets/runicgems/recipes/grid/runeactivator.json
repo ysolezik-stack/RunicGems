@@ -1,0 +1,11 @@
+{
+"ingredientPattern": "G,P,S",
+"ingredients": {
+"G": { "type": "block", "code": "runicgems:runeglass-normal" },
+"P": { "type": "item", "code": "runicgems:temporalpowder" },
+"S": { "type": "item", "code": "game:stick" }
+},
+"width": 1,
+"height": 3,
+"output": { "type": "item", "code": "runicgems:runeactivator", "quantity": 1 }
+}

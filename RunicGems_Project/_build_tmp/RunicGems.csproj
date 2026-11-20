@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework><NoWarn>MSB3277</NoWarn><AssemblyName>RunicGems</AssemblyName><AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath></PropertyGroup>
+<ItemGroup><Compile Include="..\src\**\*.cs" />
+<Reference Include="VintagestoryAPI"><HintPath>C:\Game\Vintagestory\VintagestoryAPI.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="VSSurvivalMod"><HintPath>C:\Game\Vintagestory\Mods\VSSurvivalMod.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="VSEssentials"><HintPath>C:\Game\Vintagestory\Mods\VSEssentials.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="0Harmony"><HintPath>C:\Game\Vintagestory\Lib\0Harmony.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="cairo-sharp"><HintPath>C:\Game\Vintagestory\Lib\cairo-sharp.dll</HintPath><Private>false</Private></Reference>
+<Reference Include="Newtonsoft.Json"><HintPath>C:\Game\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+</ItemGroup></Project>

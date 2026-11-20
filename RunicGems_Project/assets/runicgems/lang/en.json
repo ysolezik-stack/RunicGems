@@ -1,0 +1,12 @@
+{
+  "tabname-runicgems": "Runic Gems",
+  "item-temporalpowder": "Temporal Powder",
+  "itemdesc-temporalpowder": "Unstable dust from gears. Decays in 3 days.",
+  "item-temporaloil": "Temporal Oil",
+  "itemdesc-temporaloil": "Energy fluid for rune bowls. Drinking restores 5% stability per litre.",
+  "block-runeglass-normal": "Rune Glass",
+  "block-runeglass-active": "Active Rune Glass",
+  "blockdesc-runeglass-normal": "Arcane conductor made of quartz and powder for 4x4 rune carving.",
+  "block-runebowl": "Rune Bowl",
+  "blockdesc-runebowl": "Capacity: 1 L. Powers up to 3 blocks below and siphons oil from nearby barrels and buckets within 5 m."
+}
