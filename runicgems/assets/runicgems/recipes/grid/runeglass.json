@@ -1,0 +1,6 @@
+{
+  "ingredientPattern": "QP,PQ",
+  "ingredients": { "Q": { "type": "item", "code": "game:clearquartz" }, "P": { "type": "item", "code": "runicgems:temporalpowder" } },
+  "width": 2, "height": 2,
+  "output": { "type": "block", "code": "runicgems:runeglass-normal", "quantity": 2 }
+}

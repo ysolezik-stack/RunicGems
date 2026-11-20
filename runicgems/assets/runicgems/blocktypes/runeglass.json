@@ -1,0 +1,32 @@
+﻿{
+  "code": "runeglass",
+  "variantgroups": [
+    { "code": "state", "states": ["normal", "active", "liquid"] }
+  ],
+  "drawtype": "cube",
+  "renderpass": "Transparent",
+  "creativeinventory": {
+    "general": ["*-normal"],
+    "construction": ["*-normal"],
+    "runicgems": ["*-normal"]
+  },
+  "blockmaterial": "Glass",
+  "lightAbsorption": 0,
+  "vertexFlagsByType": {
+    "*-active": { "glowLevel": 210 },
+    "*-liquid": { "glowLevel": 225 }
+  },
+  "texturesByType": {
+    "*-normal": { "all": { "base": "runicgems:block/runeglass_normal" } },
+    "*-active": { "all": { "base": "runicgems:block/runeglass_active" } },
+    "*-liquid": { "all": { "base": "runicgems:block/runeglass_active" } }
+  },
+  "sidesolid": { "all": true },
+  "sideopaque": { "all": false },
+  "sounds": {
+    "place": "game:block/glass",
+    "break": "game:block/glass",
+    "hit": "game:block/glass",
+    "walk": "game:walk/glass"
+  }
+}

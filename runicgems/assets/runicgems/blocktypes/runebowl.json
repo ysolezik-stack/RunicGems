@@ -1,0 +1,14 @@
+{
+  "code": "runebowl",
+  "class": "BlockChiselRuneBowl",
+  "entityClass": "ChiselRuneBowl",
+  "drawtype": "json",
+  "shape": { "base": "game:block/basic/cube" },
+  "blockmaterial": "Stone",
+  "lightAbsorption": 0,
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "attributes": { "capacityLitres": 1.0 },
+  "textures": { "all": { "base": "game:block/stone/polished/basalt" } },
+  "sounds": { "place": "game:block/ceramicplace", "walk": "game:walk/stone" }
+}

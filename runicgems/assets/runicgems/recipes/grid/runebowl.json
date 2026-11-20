@@ -1,0 +1,6 @@
+{
+  "ingredientPattern": "P,B",
+  "ingredients": { "P": { "type": "item", "code": "runicgems:temporalpowder" }, "B": { "type": "block", "code": "game:bowl-*-burned" } },
+  "width": 1, "height": 2,
+  "output": { "type": "block", "code": "runicgems:runebowl-0", "quantity": 1 }
+}
