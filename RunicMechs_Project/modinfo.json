@@ -1,0 +1,13 @@
+﻿{
+  "type": "code",
+  "modid": "runicmechs",
+  "name": "Runic Mechs",
+  "authors": ["Usol"],
+  "description": "Аддон для Runic Gems: подвес модулей и големов через руны суставов.",
+  "version": "0.2.0",
+  "dependencies": {
+    "game": "1.22.0",
+    "survival": "1.22.0",
+    "runicgems": "0.5.0"
+  }
+}

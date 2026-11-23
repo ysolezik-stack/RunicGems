@@ -1,0 +1,22 @@
+﻿{
+  "code": "runicmech",
+  "class": "EntityRunicMech",
+  "hitboxSize": { "x": 1.2, "y": 1.5 },
+  "eyeHeight": 1.2,
+  "weight": 480,
+  "drops": [],
+  "client": {
+    "renderer": "RunicMechRenderer",
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 3.15 },
+      { "code": "interpolateposition" }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 3.15 }
+    ]
+  }
+}

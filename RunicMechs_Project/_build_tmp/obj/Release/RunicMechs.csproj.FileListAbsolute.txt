@@ -1,0 +1,13 @@
+C:\Users\Usol\Desktop\RunicGems_Mods\runicmechs\RunicMechs.deps.json
+C:\Users\Usol\Desktop\RunicGems_Mods\runicmechs\RunicMechs.dll
+C:\Users\Usol\Desktop\RunicGems_Mods\runicmechs\RunicMechs.pdb
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.csproj.AssemblyReference.cache
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.AssemblyInfoInputs.cache
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.AssemblyInfo.cs
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.csproj.CoreCompileInputs.cache
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.dll
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\refint\RunicMechs.dll
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.pdb
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\ref\RunicMechs.dll
+C:\Users\Usol\Desktop\RunicMechs_Project\_build_tmp\obj\Release\RunicMechs.csproj.Up2Date
