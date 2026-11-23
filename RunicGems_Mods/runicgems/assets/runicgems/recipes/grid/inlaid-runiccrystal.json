@@ -1,0 +1,11 @@
+﻿{
+  "ingredientPattern": "HC,G_",
+  "ingredients": {
+    "H": { "type": "item", "tags": ["tool-hammer"], "isTool": true, "toolDurabilityCost": 1 },
+    "C": { "type": "item", "tags": ["tool-chisel"], "isTool": true, "toolDurabilityCost": 1 },
+    "G": { "type": "item", "code": "runicgems:runiccrystal" }
+  },
+  "width": 2,
+  "height": 2,
+  "output": { "type": "block", "code": "runicgems:inlaid-runiccrystal", "quantity": 2 }
+}

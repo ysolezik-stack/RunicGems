@@ -1,0 +1,9 @@
+﻿{
+  "code": "runiccrystal-clearquartz",
+  "sealHours": 24,
+  "ingredients": [
+    { "type": "item", "code": "game:clearquartz", "quantity": 1 },
+    { "type": "item", "code": "runicgems:temporaloil", "litres": 2, "consumeLitres": 2 }
+  ],
+  "output": { "type": "item", "code": "runicgems:runiccrystal", "quantity": 2 }
+}

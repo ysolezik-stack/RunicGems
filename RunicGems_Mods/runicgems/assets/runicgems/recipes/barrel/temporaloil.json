@@ -1,0 +1,21 @@
+{
+  "code": "temporaloil",
+  "sealHours": 24,
+  "ingredients": [
+    {
+      "type": "item",
+      "code": "runicgems:temporalpowder",
+      "quantity": 2
+    },
+    {
+      "type": "item",
+      "code": "game:oilportion-flax",
+      "litres": 1
+    }
+  ],
+  "output": {
+    "type": "item",
+    "code": "runicgems:temporaloil",
+    "litres": 1
+  }
+}

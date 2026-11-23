@@ -1,0 +1,9 @@
+{
+"ingredientPattern": "PP,PP",
+"ingredients": {
+"P": { "type": "item", "code": "runicgems:temporalpowder" }
+},
+"width": 2,
+"height": 2,
+"output": { "type": "item", "code": "runicgems:runechalk", "quantity": 1 }
+}

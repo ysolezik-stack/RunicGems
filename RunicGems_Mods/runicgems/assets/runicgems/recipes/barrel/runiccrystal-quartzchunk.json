@@ -1,0 +1,9 @@
+﻿{
+  "code": "runiccrystal-quartzchunk",
+  "sealHours": 24,
+  "ingredients": [
+    { "type": "item", "code": "game:ore-quartz", "quantity": 1 },
+    { "type": "item", "code": "runicgems:temporaloil", "litres": 2, "consumeLitres": 2 }
+  ],
+  "output": { "type": "item", "code": "runicgems:runiccrystal", "quantity": 2 }
+}

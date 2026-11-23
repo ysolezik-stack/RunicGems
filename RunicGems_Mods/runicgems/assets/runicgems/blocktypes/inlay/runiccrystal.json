@@ -1,0 +1,40 @@
+﻿{
+  "code": "inlaid-runiccrystal",
+  "behaviors": [
+    { "name": "RightClickPickup" },
+    { "name": "UnstableFalling" }
+  ],
+  "shape": { "base": "runicgems:block/inlaid/runiccrystal" },
+  "textures": {
+    "all": { "base": "runicgems:block/inlaid_runiccrystal" }
+  },
+  "attributes": {
+    "canChisel": true,
+    "chiselShapeFromCollisionBox": true
+  },
+  "creativeinventory": { "general": ["*"], "construction": ["*"], "runicgems": ["*"] },
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "renderPass": "Transparent",
+  "blockmaterial": "Glass",
+  "lightAbsorption": 0,
+  "vertexFlags": {
+    "glowLevel": 115,
+    "zOffset": 2,
+    "reflective": true
+  },
+  "collisionSelectionBoxes": [
+    { "x1": 0.4, "y1": 0.0, "z1": 0.4, "x2": 0.62, "y2": 0.16, "z2": 0.62 }
+  ],
+  "sounds": {
+    "place": "game:block/glass",
+    "break": "game:block/glass",
+    "hit": "game:block/glass",
+    "walk": "game:walk/glass"
+  },
+  "guiTransform": {
+    "rotation": { "x": -45, "y": -45, "z": 0 },
+    "origin": { "x": 0.5, "y": 0.08, "z": 0.5 },
+    "scale": 3.8
+  }
+}
