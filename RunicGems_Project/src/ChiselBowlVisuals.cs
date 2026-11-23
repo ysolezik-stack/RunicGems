@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Text;
 using Vintagestory.API.Client;
@@ -59,8 +59,8 @@ Api.World.BlockAccessor.MarkBlockDirty(Pos);
 }
 private void SetPillarGlassGlow(bool active, ArrayList currentTargets)
 {
-Block norm = Api.World.GetBlock(new AssetLocation("runicgems:runeglass-normal"));
-Block act = Api.World.GetBlock(new AssetLocation("runicgems:runeglass-active"));
+Block norm = Api.World.GetBlock(new AssetLocation("runicgems:inlaid-runiccrystal"));
+Block act = Api.World.GetBlock(new AssetLocation("runicgems:inlaid-runiccrystal-active"));
 if (norm == null || act == null) return;
 ArrayList all = new ArrayList();
 foreach (BlockPos p in lastLitPositions) if (!all.Contains(p)) all.Add(p);
@@ -74,7 +74,7 @@ bool changed = false;
 for (int i = 0; i < ch.BlockIds.Length; i++)
 {
 int bid = ch.BlockIds.GetValue(i) is int id ? id : 0;
-if (ChiselRuneScanner.IsRuneGlass(Api.World.GetBlock(bid)?.Code?.ToString()) && bid != target.BlockId)
+if (ChiselRuneScanner.IsRuneCrystalInlay(Api.World.GetBlock(bid)?.Code?.ToString()) && bid != target.BlockId)
 {
 ch.BlockIds.SetValue(target.BlockId, i);
 changed = true;
@@ -148,3 +148,4 @@ dsc.AppendLine(effs.Count > 0 ? string.Format("Активно (R={0:0.0} м): {1
 }
 }
 }
+

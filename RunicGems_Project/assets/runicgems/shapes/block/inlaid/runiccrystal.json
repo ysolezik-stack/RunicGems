@@ -1,0 +1,69 @@
+﻿{
+  "editor": { "allAngles": true },
+  "textures": { "all": "runicgems:block/inlaid_runiccrystal" },
+  "elements": [
+    {
+      "name": "mainCrystal",
+      "from": [ 7.0, 0.0, 7.0 ],
+      "to": [ 9.0, 3.8, 9.0 ],
+      "rotationOrigin": [ 8.0, 0.0, 8.0 ],
+      "rotationX": 8.0,
+      "rotationZ": -6.0,
+      "faces": {
+        "north": { "texture": "#all", "uv": [0, 0, 8, 16] },
+        "east":  { "texture": "#all", "uv": [4, 0, 12, 16] },
+        "south": { "texture": "#all", "uv": [8, 0, 16, 16] },
+        "west":  { "texture": "#all", "uv": [2, 0, 10, 16] },
+        "up":    { "texture": "#all", "uv": [4, 4, 12, 12] },
+        "down":  { "texture": "#all", "uv": [4, 4, 12, 12] }
+      }
+    },
+    {
+      "name": "sideCrystal1",
+      "from": [ 8.6, 0.0, 7.3 ],
+      "to": [ 10.1, 2.7, 8.8 ],
+      "rotationOrigin": [ 8.6, 0.0, 7.3 ],
+      "rotationZ": -24.0,
+      "rotationY": 18.0,
+      "faces": {
+        "north": { "texture": "#all", "uv": [0, 4, 8, 16] },
+        "east":  { "texture": "#all", "uv": [4, 4, 12, 16] },
+        "south": { "texture": "#all", "uv": [8, 4, 16, 16] },
+        "west":  { "texture": "#all", "uv": [2, 4, 10, 16] },
+        "up":    { "texture": "#all", "uv": [4, 4, 12, 12] },
+        "down":  { "texture": "#all", "uv": [4, 4, 12, 12] }
+      }
+    },
+    {
+      "name": "sideCrystal2",
+      "from": [ 5.8, 0.0, 7.8 ],
+      "to": [ 7.2, 2.3, 9.2 ],
+      "rotationOrigin": [ 7.2, 0.0, 7.8 ],
+      "rotationZ": 22.0,
+      "rotationY": -15.0,
+      "faces": {
+        "north": { "texture": "#all", "uv": [0, 4, 8, 16] },
+        "east":  { "texture": "#all", "uv": [4, 4, 12, 16] },
+        "south": { "texture": "#all", "uv": [8, 4, 16, 16] },
+        "west":  { "texture": "#all", "uv": [2, 4, 10, 16] },
+        "up":    { "texture": "#all", "uv": [4, 4, 12, 12] },
+        "down":  { "texture": "#all", "uv": [4, 4, 12, 12] }
+      }
+    },
+    {
+      "name": "frontCrystal",
+      "from": [ 7.4, 0.0, 8.7 ],
+      "to": [ 8.7, 1.9, 10.0 ],
+      "rotationOrigin": [ 7.4, 0.0, 8.7 ],
+      "rotationX": 25.0,
+      "faces": {
+        "north": { "texture": "#all", "uv": [0, 6, 8, 16] },
+        "east":  { "texture": "#all", "uv": [4, 6, 12, 16] },
+        "south": { "texture": "#all", "uv": [8, 6, 16, 16] },
+        "west":  { "texture": "#all", "uv": [2, 6, 10, 16] },
+        "up":    { "texture": "#all", "uv": [4, 4, 12, 12] },
+        "down":  { "texture": "#all", "uv": [4, 4, 12, 12] }
+      }
+    }
+  ]
+}

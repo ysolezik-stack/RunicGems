@@ -10,3 +10,4 @@ C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.dll
 C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\refint\RunicGems.dll
 C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.pdb
 C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\ref\RunicGems.dll
+C:\Users\Usol\Desktop\RunicGems_Project\_build_tmp\obj\Release\RunicGems.csproj.Up2Date

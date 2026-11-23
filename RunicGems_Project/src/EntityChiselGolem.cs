@@ -147,6 +147,7 @@ WatchedAttributes.SetBytes("f_top_cuboids_" + i, fd.TopCuboidsBytes);
 WatchedAttributes.SetString("f_top_codes_" + i, fd.TopBlockCodes ?? "");
 }
 }
+RebuildLegacyGolemData();
 ApplyHeightBounds();
 WatchedAttributes.MarkAllDirty();
 }
@@ -969,7 +970,7 @@ return true;
 }
 return false;
 }
-public ItemStack PackToItemStack()
+        public ItemStack PackToItemStack()
 {
 Item golemItem = World.GetItem(new AssetLocation("runicgems", "golemhead"));
 if (golemItem == null) return null;
@@ -1008,7 +1009,72 @@ stack.Attributes.SetItemstack("carriedStack", carriedStack.Clone());
 }
 return stack;
 }
-public void UnpackFromItemStack(ItemStack stack, string fallbackOwnerUid)
+        public void RebuildLegacyGolemData()
+        {
+            if (World == null || World.Side != EnumAppSide.Server) return;
+            bool changed = false;
+
+            for (int i = 0; i < 6; i++)
+            {
+                string fc = WatchedAttributes.GetString("f_codes_" + i, "");
+                if (!string.IsNullOrEmpty(fc) && fc.Contains("runeglass"))
+                {
+                    fc = fc.Replace("runicgems:runeglass-normal", "runicgems:inlaid-runiccrystal")
+                           .Replace("runicgems:runeglass-active", "runicgems:inlaid-runiccrystal");
+                    WatchedAttributes.SetString("f_codes_" + i, fc);
+                    changed = true;
+                }
+
+                string tc = WatchedAttributes.GetString("f_top_codes_" + i, "");
+                if (!string.IsNullOrEmpty(tc) && tc.Contains("runeglass"))
+                {
+                    tc = tc.Replace("runicgems:runeglass-normal", "runicgems:inlaid-runiccrystal")
+                           .Replace("runicgems:runeglass-active", "runicgems:inlaid-runiccrystal");
+                    WatchedAttributes.SetString("f_top_codes_" + i, tc);
+                    changed = true;
+                }
+            }
+
+            byte[] blob = WatchedAttributes.GetBytes("animBlob");
+            if (blob != null && blob.Length > 0)
+            {
+                GolemAnimSet set = GolemAnimCodec.Decompress(blob);
+                if (set != null)
+                {
+                    bool blobChanged = false;
+                    if (!string.IsNullOrEmpty(set.BottomCodes) && set.BottomCodes.Contains("runeglass"))
+                    {
+                        set.BottomCodes = set.BottomCodes.Replace("runicgems:runeglass-normal", "runicgems:inlaid-runiccrystal")
+                                                         .Replace("runicgems:runeglass-active", "runicgems:inlaid-runiccrystal");
+                        blobChanged = true;
+                    }
+                    if (!string.IsNullOrEmpty(set.TopCodes) && set.TopCodes.Contains("runeglass"))
+                    {
+                        set.TopCodes = set.TopCodes.Replace("runicgems:runeglass-normal", "runicgems:inlaid-runiccrystal")
+                                                   .Replace("runicgems:runeglass-active", "runicgems:inlaid-runiccrystal");
+                        blobChanged = true;
+                    }
+                    if (blobChanged)
+                    {
+                        WatchedAttributes.SetBytes("animBlob", GolemAnimCodec.Compress(set));
+                        changed = true;
+                    }
+                }
+            }
+
+            if (changed)
+            {
+                WatchedAttributes.MarkAllDirty();
+            }
+        }
+
+        public override void OnEntityLoaded()
+        {
+            base.OnEntityLoaded();
+            RebuildLegacyGolemData();
+        }
+
+        public void UnpackFromItemStack(ItemStack stack, string fallbackOwnerUid)
 {
 if (stack?.Attributes == null) return;
 HeightBlocks = stack.Attributes.GetInt("heightBlocks", 1);
@@ -1037,6 +1103,7 @@ if (savedCargo != null && savedCargo.ResolveBlockOrItem(World))
 carriedStack = savedCargo;
 SyncCarriedVisuals();
 }
+RebuildLegacyGolemData();
 ApplyHeightBounds();
 WatchedAttributes.MarkAllDirty();
 }
@@ -1069,7 +1136,7 @@ Die(EnumDespawnReason.PickedUp);
 return;
 }
 }
-if (held != null && TryRefillOil(byEntity, itemslot)) return;
+if (held != null && TryRefillOil(byEntity, itemslot)) return; if (!(this is not EntityChiselGolem) && GetType().Name == "EntityChiselGolem" && HasRuneAnyFrame("Storage") && GolemStorageHelper.TryInteractStorage(this, player as IServerPlayer, itemslot, 1)) return;
 if (held == null && HasRuneAnyFrame("Follow"))
 {
 IsWaiting = !IsWaiting;
@@ -1160,3 +1227,13 @@ return sb.ToString();
 }
 }
 }
+
+
+
+
+
+
+
+
+
+

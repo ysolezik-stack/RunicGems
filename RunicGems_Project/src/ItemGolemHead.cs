@@ -61,7 +61,7 @@ renderinfo.ModelRef = meshRef;
 base.OnBeforeRender(capi, itemstack, target, ref renderinfo);
 }
 public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
-{
+{ if (slot?.Itemstack?.Attributes?.HasAttribute("mech_parts_blob") == true || (blockSel == null && entitySel?.Entity?.WatchedAttributes?.HasAttribute("mech_parts_blob") == true)) { handling = EnumHandHandling.PreventDefault; if ((byEntity as EntityPlayer)?.Player is Vintagestory.API.Server.IServerPlayer spMsg) spMsg.SendMessage(0, "[RunicMechs] Многоблочный мех редактируется через Пересобрать корпус в окне конечностей!", EnumChatType.Notification); return; }
 if (!firstEvent) return;
 ITreeAttribute attr = slot?.Itemstack?.Attributes;
 bool isPacked = attr != null && (attr.GetBool("isPackedGolem", false) || attr.HasAttribute("f_cuboids_0"));
@@ -127,8 +127,34 @@ for (int i = 0; i < codes.Length; i++)
 Block b = capi.World.GetBlock(new AssetLocation(codes[i]));
 if (b != null && b.Id != 0)
 {
-capi.Tesselator.TesselateBlock(b, out MeshData bm);
-matMeshes[i] = bm;
+    string lowCode = codes[i].ToLowerInvariant();
+    if (lowCode.Contains("inlaid"))
+    {
+        Block baseCube = capi.World.GetBlock(new AssetLocation(lowCode.EndsWith("-active") ? "runicgems:runeglass-active" : "runicgems:runeglass-normal"))
+                         ?? capi.World.GetBlock(new AssetLocation("game:stone-granite"));
+        capi.Tesselator.TesselateBlock(baseCube, out MeshData bm);
+
+        TextureAtlasPosition tp = null;
+        if (b.Textures != null)
+        {
+            foreach (var kv in b.Textures)
+            {
+                if (kv.Value?.Baked != null && kv.Value.Baked.TextureSubId > 0)
+                {
+                    tp = capi.BlockTextureAtlas.Positions[kv.Value.Baked.TextureSubId];
+                    break;
+                }
+            }
+        }
+        if (tp == null) tp = capi.BlockTextureAtlas.GetPosition(b, "all") ?? capi.BlockTextureAtlas.GetPosition(b, "up");
+        if (bm != null && tp != null) bm.SetTexPos(tp);
+        matMeshes[i] = bm;
+    }
+    else
+    {
+        capi.Tesselator.TesselateBlock(b, out MeshData bm);
+        matMeshes[i] = bm;
+    }
 }
 }
 for (int i = 0; i < cuboidsArr.Length; i++)
@@ -165,7 +191,18 @@ float cy = attr.GetInt("minY", 0) / 16f;
 float cz = ((attr.GetInt("minZ", 0) + attr.GetInt("maxZ", 15) + 1) * 0.5f) / 16f;
 combined.Translate(0.5f - cx, -cy, 0.5f - cz);
 }
+if (combined != null) GuiDialogGolemAnimator.ApplyChiselWorldUV(combined);
 return combined;
 }
 }
 }
+
+
+
+
+
+
+
+
+
+

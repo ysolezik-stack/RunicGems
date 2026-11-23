@@ -1,0 +1,50 @@
+﻿{
+  "code": "runiccrystal",
+  "class": "ItemRuneCrystal",
+  "maxstacksize": 64,
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "Quadrants",
+        "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.25, "z2": 1 }
+      }
+    }
+  ],
+  "creativeinventory": {
+    "general": ["*"],
+    "items": ["*"],
+    "runicgems": ["*"]
+  },
+  "shape": {
+    "base": "game:block/stone/mineral/small1",
+    "rotateX": 180
+  },
+  "textures": {
+    "material": { "base": "runicgems:item/runiccrystal" },
+    "material-top": { "base": "runicgems:item/runiccrystal-top" }
+  },
+  "combustibleProps": {
+    "meltingPoint": 900,
+    "meltingDuration": 30,
+    "smeltedRatio": 2,
+    "smeltedStack": { "type": "block", "code": "runicgems:runeglass-normal" }
+  },
+  "guiTransform": {
+    "rotation": { "x": -38, "y": -45, "z": -15 },
+    "origin": { "x": 0.5, "y": 0.78, "z": 0.5 },
+    "scale": 2.45
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": 0.45, "z": 0 },
+    "rotation": { "x": 0, "y": -45, "z": 0 },
+    "origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+    "scale": 3.0
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.78, "y": -0.45, "z": -0.72 },
+    "rotation": { "x": 0, "y": -25, "z": -65 },
+    "origin": { "x": 0.5, "y": 0.75, "z": 0.5 },
+    "scale": 0.85
+  }
+}

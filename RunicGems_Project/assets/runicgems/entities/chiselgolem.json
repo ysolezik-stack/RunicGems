@@ -1,4 +1,4 @@
-{
+﻿{
 "code": "chiselgolem",
 "class": "EntityChiselGolem",
 "tags": ["habitat-land"],
@@ -16,7 +16,8 @@
 { "code": "repulseagents" },
 { "code": "controlledphysics", "stepHeight": 1.1251 },
 { "code": "floatupwhenstuck", "onlyWhenDead": true },
-{ "code": "interpolateposition" }
+{ "code": "interpolateposition" },
+{ "code": "nametag", "showtagonlywhentargeted": false, "selectFromRange": 32 }
 ]
 },
 "server": {
@@ -40,7 +41,8 @@
 { "code": "aggressiveondamage", "duration": 20, "chance": 1, "slot": 0, "priority": 2, "accumType": "max" }
 ]
 },
-{ "code": "floatupwhenstuck", "onlyWhenDead": true }
+{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+{ "code": "nametag", "showtagonlywhentargeted": false, "selectFromRange": 32 }
 ]
 },
 "sounds": {

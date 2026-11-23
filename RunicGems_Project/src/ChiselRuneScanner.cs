@@ -22,6 +22,7 @@ public static class ChiselRuneScanner
 {
 public static readonly BlockFacing[] HorFaces = new BlockFacing[] { BlockFacing.NORTH, BlockFacing.EAST, BlockFacing.SOUTH, BlockFacing.WEST };
 public static bool IsRuneGlass(string code) => code == "runicgems:runeglass-normal" || code == "runicgems:runeglass-active";
+public static bool IsRuneCrystalInlay(string code) => code == "runicgems:inlaid-runiccrystal" || code == "runicgems:inlaid-runiccrystal-active";
 public static string MatchDynamicRuneSlice(bool[] fg, int axis = -1)
 {
 ArrayList entries = CustomRuneRegistry.GetEntries();
@@ -167,7 +168,9 @@ int matIdx = -1;
 for (int i = 0; i < ch.BlockIds.Length; i++)
 {
 int bid = ch.BlockIds.GetValue(i) is int id ? id : 0;
-if (IsRuneGlass(world.GetBlock(bid)?.Code?.ToString())) { matIdx = i; res.RuneGlassBlocksCount++; break; }
+string bCode = world.GetBlock(bid)?.Code?.ToString();
+if (IsRuneGlass(bCode)) { res.RuneGlassBlocksCount++; }
+if (IsRuneCrystalInlay(bCode) && matIdx < 0) { matIdx = i; }
 }
 if (matIdx < 0) return relayFaces;
 byte[] vox = new byte[4096];
@@ -253,3 +256,6 @@ return true;
 }
 }
 }
+
+
+
